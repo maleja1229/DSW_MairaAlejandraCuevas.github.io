@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CssGrid</title>
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+
+    pre {
+        color:  blue;
+    }
+    span.token-punctuation{
+        color:  blue;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a, .dropbtn {
+      display: inline-block;
+      color: rgb(12, 12, 12);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: gray;
+    }
+    
+    li.dropdown {
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    </style>
+<body>
+<div id="contenido" class="slideUp">
+  <div class="cabecera" border="0">
+    <header class="navegacion">
+        <nav>
+            <ul>
+              <li><a class="activo" href="../design.html">Inicio</a></li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Temas</a>
+                <div class="dropdown-content">
+                  <a href="../content/FlexBox.html">Flex Box</a>
+                  <a href="../content/CSSGrid.html">CSS Grid</a>
+                </div>
+              </li>
+              <li><a href="#.html">Recursos digitales</a></li>
+              <li><a href="#.html">Aprendizaje</a></li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Acerca de</a>
+                <div class="dropdown-content">
+                  <a href="autor.html">Autor</a>
+                 
+                </div>
+              </li>
+            </ul>
+          </nav>
+    
+      <h1>CSS Grid Layout</h1>
+      
+      <P>CSS Grid layout contiene funciones de diseño dirigidas a los desarrolladores de aplicaciones web. El CSS grid se puede utilizar para lograr muchos diseños diferentes. También se destaca por permitir dividir una página en áreas o regiones principales, por definir la relación en términos de tamaño, posición y capas entre partes de un control construido a partir de primitivas HTML.</P>
+      <P>Al igual que las tablas, el grid layout permite a un autor alinear elementos en columnas y filas. Sin embargo, con CSS grid son posibles muchos más diseños y de forma más sencilla que con las tablas. Por ejemplo, los elementos secundarios de un contenedor de cuadrícula podrían posicionarse para que se solapen y se superpongan, de forma similar a los elementos posicionados en CSS.</P>
+      
+      <h3>Ejemplo sencillo</h3>
+      <p>El siguiente ejemplo muestra un grid de tres columnas con filas nuevas creadas con un mínimo de 100 píxeles y un máximo automático. Los elementos se han colocado en el grid utilizando posicionamiento en línea.</p>
+      
+      <h3>HTML</h3>
+      <pre class="brush: html notranslate"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>wrapper<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>one<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>One<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>two<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Two<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>three<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Three<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>four<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Four<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>five<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Five<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>six<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Six<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
+    
+      <h3>CSS</h3>
+      <pre class="brush: css notranslate"><code><span class="token selector">.wrapper</span> <span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> grid<span class="token punctuation">;</span>
+        <span class="token property">grid-template-columns</span><span class="token punctuation">:</span> <span class="token function">repeat</span><span class="token punctuation">(</span>3<span class="token punctuation">,</span> 1fr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token property">grid-gap</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+        <span class="token property">grid-auto-rows</span><span class="token punctuation">:</span> <span class="token function">minmax</span><span class="token punctuation">(</span>100px<span class="token punctuation">,</span> auto<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.one</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 1 / 3<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.two</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 2 / 4<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 1 / 3<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.three</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 2 / 5<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.four</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.five</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector">.six</span> <span class="token punctuation">{</span>
+        <span class="token property">grid-column</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+        <span class="token property">grid-row</span><span class="token punctuation">:</span> 4<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      </code></pre>
+      <div align="center"><img src="../img/Cssgrid.PNG"></div>
+      <h3>Propiedades CSS</h3>
+      <div class="index">
+        <ul>
+         <li><a><code>grid-template-columns</code></a></li>
+         <li><a ><code>grid-template-rows</code></a></li>
+         <li><a ><code>grid-template-areas</code></a></li>
+         <li><a><code>grid-template</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-auto-columns</code></a></li>
+         <li><a><code>grid-auto-rows</code></a></li>
+         <li><a><code>grid-auto-flow</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid</code></a></li>
+         <li><a><code>grid-row-start</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-column-start</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-row-end</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-column-end</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-row</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-column</code> <span>(en-US)</span></a></li>
+         <li><a><code>grid-area</code> <span>(en-US)</span></a></li>
+         <li><a><code>row-gap</code> <span>(en-US)</span></a></li>
+         <li><a><code>column-gap</code></a></li>
+         <li><a><code>gap</code></a></li>
+        </ul>
+        </div>
+        <br>
+        <br>
+        <div><article>La informacion tecnica y los ejemplos han sido consultados atravez de:</article>
+            <article>(https://developer.mozilla.org)</article>
+            <article>(https://www.w3schools.com/)</article></div>
+     </header>
+  </div>
+  <footer id="contenido3">Email: m_alejandracuevas@hotmail.com - Skype: maleja1229 - 15 de Mayo de 2021</footer>
+</div>
+</body>
+</html>
