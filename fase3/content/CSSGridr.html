@@ -66,6 +66,14 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    .videoWrapper { 
+      position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0; 
+      } 
+
+    .videoWrapper iframe {
+       position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+       }
     </style>
 <body>
 <div id="contenido" class="slideUp">
@@ -73,20 +81,26 @@
     <header class="navegacion">
         <nav>
             <ul>
-              <li><a class="activo" href="../design.html">Inicio</a></li>
+              <li><a class="activo" href="design.html">Inicio</a></li>
               <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Temas</a>
                 <div class="dropdown-content">
-                  <a href="../content/FlexBox.html">Flex Box</a>
-                  <a href="../content/CSSGrid.html">CSS Grid</a>
+                  <a href="content/FlexBox.html">Flex Box</a>
+                  <a href="content/CSSGrid.html">CSS Grid</a>
                 </div>
               </li>
-              <li><a href="#.html">Recursos digitales</a></li>
+              <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Recursos digitales</a>
+              <div class="dropdown-content">
+                <a href="content/FlexBoxr.html">Flex Box</a>
+                <a href="content/CSSGridr.html">CSS Grid</a>
+            </div>
+          </li>
               <li><a href="#.html">Aprendizaje</a></li>
               <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Acerca de</a>
                 <div class="dropdown-content">
-                  <a href="autor.html">Autor</a>
+                  <a href="content/autor.html">Autor</a>
                  
                 </div>
               </li>
