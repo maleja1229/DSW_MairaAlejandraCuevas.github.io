@@ -1,21 +1,14 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CssGrid</title>
+<title>FlexBox</title>
 <link rel="stylesheet" href="../css/animations.css">
 <link rel="stylesheet" href="../css/style.css">
 </head>
 <style>
-
-    pre {
-        color:  blue;
-    }
-    span.token-punctuation{
-        color:  blue;
-    }
     ul {
       list-style-type: none;
       margin: 0;
@@ -66,6 +59,16 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+
+    .videoWrapper { 
+      position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0; 
+      } 
+
+    .videoWrapper iframe {
+       position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+       }
+
+
     </style>
 <body>
 <div id="contenido" class="slideUp">
@@ -89,12 +92,12 @@
             </div>
           </li>
           <li class="dropdown">
-              <a href="javascript:void(0)" class="dropbtn">Aprendizaje</a>
-              <div class="dropdown-content">
-                <a href="#">Aprendizaje1</a>
-                <a href="#">Aprendizaje2</a>
-              </div>
-            </li>
+            <a href="javascript:void(0)" class="dropbtn">Aprendizaje</a>
+            <div class="dropdown-content">
+              <a href="Aprendizaje1.html">Aprendizaje1</a>
+              <a href="Aprendizaje2.html">Aprendizaje2</a>
+            </div>
+          </li>
               <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Acerca de</a>
                 <div class="dropdown-content">
@@ -104,17 +107,27 @@
             </ul>
           </nav>
     
-          <div class="container">
-            <h1 class="text-align: center"><h1>AUTOR</h1>
-          </div>
-        <h3>Maira Alejandra Cuevas Parra - Ingenieria de Sistemas</h3>
-        <P>Email: m_alejandracuevas@hotmail.com</P>
-        <P>Tel: 3103292712</P>
-        <p>Skype: maleja1229</p><br>
-        <h4>UNAD (Universidad nacional abierta y a distancia)</h4>
-        
-        </div>
-     </header>
+      <h1>Conceptos Básicos de flexbox</h1>
+      
+      <P>El Módulo de Caja Flexible, comúnmente llamado flexbox, fue diseñado como un modelo unidimensional de layout, y como un método que pueda ayudar a distribuir el espacio entre los ítems de una interfaz y mejorar las capacidades de alineación. Este artículo hace un repaso de las principales características de flexbox, las que exploraremos con mayor detalle en el resto de estas guías.</P>
+    
+      <h1>Escucha nuestro podcast flexbox y CSSGrid</h1>
+      <iframe src="https://open.spotify.com/embed-podcast/show/3P9XciU9z7sz9cpEoIv22u" width="100%" height="232" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <b></b>
+
+      <h1>Aprender Conceptos Básicos de flexbox</h1>
+      <div class="videoWrapper">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/eW628sJkuhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    </div>
+    <b></b>
+      <h1>Caracteristicas principales de flexbox</h1>
+      <div class="videoWrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/RhLxQx4P1oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+     
+      
+    </header>
+  </div>
   <footer id="contenido3">Email: m_alejandracuevas@hotmail.com - Skype: maleja1229 - 15 de Mayo de 2021</footer>
 </div>
 </body>

@@ -1,0 +1,169 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexBox</title>
+<link rel="stylesheet" href="../css/animations.css">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a, .dropbtn {
+      display: inline-block;
+      color: rgb(12, 12, 12);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: gray;
+    }
+    
+    li.dropdown {
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {background-color: #f1f1f1;}
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .videoWrapper { 
+      position: relative; padding-bottom: 56.25%; /* 16:9 */ padding-top: 25px; height: 0; 
+      } 
+
+    .videoWrapper iframe {
+       position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+       }
+
+
+    </style>
+<body>
+<div id="contenido" class="slideUp">
+  <div class="cabecera" border="0">
+    <header class="navegacion">
+        <nav>
+            <ul>
+              <li><a class="activo" href="../design.html">Inicio</a></li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Temas</a>
+                <div class="dropdown-content">
+                  <a href="FlexBox.html">Flex Box</a>
+                  <a href="CSSGrid.html">CSS Grid</a>
+                </div>
+              </li>
+              <li class="dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Recursos digitales</a>
+              <div class="dropdown-content">
+                <a href="FlexBoxr.html">Flex Box</a>
+                <a href="CSSGridr.html">CSS Grid</a>
+            </div>
+          </li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Aprendizaje</a>
+            <div class="dropdown-content">
+              <a href="Aprendizaje1.html">Aprendizaje1</a>
+              <a href="Aprendizaje2.html">Aprendizaje2</a>
+            </div>
+          </li>
+              <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Acerca de</a>
+                <div class="dropdown-content">
+                  <a href="autor.html">Autor</a>
+                </div>
+              </li>
+            </ul>
+          </nav>
+    
+          <h1>Diseño Responsive con Media Queries</h1>
+      
+          <P>una media query consiste en un tipo de medio y al menos una consulta que limita las hojas de estilo utilizando características del medio como ancho, alto y color.</P>
+          <P>Se entiende como un módulo CSS3 que permite adaptar la representación del contenido a características del dispositivo, lo que se conoce diseño líquido o responsive.</P>
+          
+          <h3>Sintaxis</h3>
+          <p>La sintaxis de las media queries consisten de un media type y una o mas expresiones, implicando características del medio, la cual se resuelve como verdadera o falsa. El resultado de la consulta es verdadera si el tipo de medio especificado en el media query concuerda con el tipo de dispositivo que está siendo mostrado y todas las expresiones en el media query son verdaderas.</p>
+          <pre class=" language-css"><code class=" language-css">
+            <span class="token comment" spellcheck="true">/* para dispositivos cuya anchura de pantalla sea inferior a 768px la clase menu estará oculta */</span>
+            <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 768px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+              <span class="token selector"><span class="token class">.menu</span> </span><span class="token punctuation">{</span>
+                <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+            </code></pre>
+
+            <h3>Plantilla</h3>
+            <p>A partir del ejemplo anterior, en la práctica podríamos definir dos plantillas básicas de media-queries para desarrollar prácticamente cualquier proyecto web. Estos valores de breakpoint coinciden además con los utilizados por Bootstrap, como veremos más adelante.</p>
+            <pre class=" language-css"><code class=" language-css">
+              //Pantallas muy grandes  <span class="token punctuation">(</span>desktops de más de <span class="token number">1200</span>px de ancho<span class="token punctuation">)</span>
+              //No hace falta media-query porque será nuestro diseño por defecto
+              
+              //Pantallas grandes <span class="token punctuation">(</span>desktops de menos de <span class="token number">1200</span>px<span class="token punctuation">)</span>
+              <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 1199.98px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token number">...</span> <span class="token punctuation">}</span>
+              
+              //Pantallas medianas <span class="token punctuation">(</span>tablets de menos de <span class="token number">992</span>px<span class="token punctuation">)</span>
+              <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 991.98px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token number">...</span> <span class="token punctuation">}</span>
+              
+              //Pantallas pequeñas <span class="token punctuation">(</span>móviles en landscape de menos de <span class="token number">768</span>px<span class="token punctuation">)</span>
+              <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 767.98px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token number">...</span> <span class="token punctuation">}</span>
+              
+              //Pantallas muy pequeñas <span class="token punctuation">(</span>móviles en portrait de menos de <span class="token number">576</span>px<span class="token punctuation">)</span>
+              <span class="token atrule"><span class="token rule">@media</span> <span class="token punctuation">(</span><span class="token property">max-width</span><span class="token punctuation">:</span> 575.98px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span> <span class="token number">...</span> <span class="token punctuation">}</span>
+              </code></pre>
+
+              <h1>Medidas para mejorar el SEO</h1>
+              <p>El SEO es generar contenido de calidad que suscite interés, con una web que resuelva un problema o necesidad, orientada a la forma en la que el usuario busca esa información concreta e indexable por los motores de búsqueda. Eso es el SEO.</p>
+
+              <h1>15 consejos para mejorar el posicionamiento</h1>
+              <p>1. Conoce a tus usuarios</p>
+              <p>2. Ten un plan</p>
+              <p>3. Utiliza tu blog</p>
+              <p>4. Amigos hasta en el infierno</p>
+              <p>5. Profundiza en Redes Sociales</p>
+              <p>6. Crea iniciativas conjuntas</p>
+              <p>7. Reserva los mejores contenidos para los demás</p>
+              <p>8. Respeta el branding como herramienta SEO</p>
+              <p>9. Vídeo, vídeo y vídeo</p>
+              <p>10. Cambia de formato</p>
+              <p>11. Deja que los usuarios te ayuden</p>
+              <p>12. Crea tus propias imágenes</p>
+              <p>13. Piensa en el dominio</p>
+              <p>14. Trabaja tu marca personal</p>
+              <p>15. Encuentra un buen balance entre calidad y cantidad</p>
+    </header>
+  </div>
+  <footer id="contenido3">Email: m_alejandracuevas@hotmail.com - Skype: maleja1229 - 15 de Mayo de 2021</footer>
+</div>
+</body>
+</html>
